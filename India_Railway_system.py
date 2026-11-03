@@ -23,14 +23,102 @@ seat_numbers = [1, 2, 3, 4, 5]
 # print("the data type of seat_numbers : ",type(seat_numbers))
 
 # Getting passangers information
-print(" --- Indian Railway Booking System --- ")
-Passenger_name = input("Enter passenger name : ")
-Age = int(input("Enter Age : "))
-Destination = input("Enter Destination : ")
+# print(" --- Indian Railway Booking System --- ")
+# Passenger_name = input("Enter passenger name : ")
+# Age = int(input("Enter Age : "))
+# Destination = input("Enter Destination : ")
 
-# Display booking Confirmation
-print("\n --- Booking Details --- ")
-print(f"passenger : {Passenger_name}")
-print(f"Age : {Age}")
-print(f"Destination : {Destination}")
-print("Booking confirmed!!!")
+# # Display booking Confirmation
+# print("\n --- Booking Details --- ")
+# print(f"passenger : {Passenger_name}")
+# print(f"Age : {Age}")
+# print(f"Destination : {Destination}")
+# print("Booking confirmed!!!")
+
+#Arthimetic Operators
+
+# Base_price = 1500
+# Service_charge = 100
+# Total_price = Base_price + Service_charge
+
+# print(f"Base Price : ₹{Base_price}")
+# print(f"Service Charge : ₹{Service_charge}")
+# print(f"Total Price : ₹{Total_price}")
+
+# Comparison Operators
+# passengers_age = 25
+# senior_citizen_age = 60
+# is_senior = passengers_age >= senior_citizen_age
+
+# print(f"\nIs passenger senior citizen? {is_senior}")
+
+
+
+#Logical operators
+# has_ticket = True
+# has_id_proof = True
+# can_board = has_ticket and has_id_proof
+
+# print(f"Can Board Train? {can_board}")
+
+
+#Control Flow - If Statements
+
+#Age based Pricings
+
+# Age = int(input("Enter passenger Age : "))
+
+# if Age < 5:
+#     price = 0
+#     category = "Infant (FREE)"
+# elif Age < 12:
+#     price = 750
+#     Category = "Child (50% DISCOUNT)"
+# elif Age >= 60:
+#     price = 1200 
+#     category = "Senior Citizen (20% DISCOUNT)"
+# else:
+#     price = 1500
+#     category = "Adult"
+
+# print(f"Category : {category}")
+# print(f"Ticket Price : ₹{price}")
+
+# For Loop - Display available trains 
+
+Trains = [
+    {"name": "Rajdhani Express",
+     "number": 12303,
+     "destination":"New Delhi"},
+     {"name": "Shatabdi Express",
+          "number": 11306,
+          "destination":"Chennai"},
+    {"name": "Duronto Express",
+         "number": 23231,
+         "destination":"Mumbai"},
+]
+
+print("Available Trains: ")
+for Train in Trains : 
+    print(f"{Train['number']} - {Train['name']} to {Train['destination']}")
+
+
+#While loop - Booking  System Menu
+
+print("\n --- Booking Menu --- ")
+choice = 0
+
+while choice != 3:
+    print("1. Book Ticket")
+    print("2. Check Status")
+    print("3. Exit")
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        print("Booking ticket ...")
+    elif choice ==2:
+        print("Checking Status")
+    elif choice == 3:
+        print("Thank you for using Indian Railways🙏")
+    else:
+        print("Invalid Choice😵‍💫")
