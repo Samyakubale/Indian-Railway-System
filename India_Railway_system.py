@@ -1,10 +1,10 @@
 # Defining Variables for Indian Railway System
 
-train_name = "Rajdhani Express"
-train_number = 12301
-ticket_price = 2450.50
-is_ac_available = True
-seat_numbers = [1, 2, 3, 4, 5]
+# train_name = "Rajdhani Express"
+# train_number = 12301
+# ticket_price = 2450.50
+# is_ac_available = True
+# seat_numbers = [1, 2, 3, 4, 5]
 
 # Showing the Details using print Function
 
@@ -86,39 +86,89 @@ seat_numbers = [1, 2, 3, 4, 5]
 
 # For Loop - Display available trains 
 
-Trains = [
-    {"name": "Rajdhani Express",
-     "number": 12303,
-     "destination":"New Delhi"},
-     {"name": "Shatabdi Express",
-          "number": 11306,
-          "destination":"Chennai"},
-    {"name": "Duronto Express",
-         "number": 23231,
-         "destination":"Mumbai"},
-]
+# Trains = [
+#     {"name": "Rajdhani Express",
+#      "number": 12303,
+#      "destination":"New Delhi"},
+#      {"name": "Shatabdi Express",
+#           "number": 11306,
+#           "destination":"Chennai"},
+#     {"name": "Duronto Express",
+#          "number": 23231,
+#          "destination":"Mumbai"},
+# ]
 
-print("Available Trains: ")
-for Train in Trains : 
-    print(f"{Train['number']} - {Train['name']} to {Train['destination']}")
+# print("Available Trains: ")
+# for Train in Trains : 
+#     print(f"{Train['number']} - {Train['name']} to {Train['destination']}")
 
 
 #While loop - Booking  System Menu
 
-print("\n --- Booking Menu --- ")
-choice = 0
+# print("\n --- Booking Menu --- ")
+# choice = 0
 
-while choice != 3:
-    print("1. Book Ticket")
-    print("2. Check Status")
-    print("3. Exit")
-    choice = int(input("Enter your choice: "))
+# while choice != 3:
+#     print("1. Book Ticket")
+#     print("2. Check Status")
+#     print("3. Exit")
+#     choice = int(input("Enter your choice: "))
 
-    if choice == 1:
-        print("Booking ticket ...")
-    elif choice ==2:
-        print("Checking Status")
-    elif choice == 3:
-        print("Thank you for using Indian Railways🙏")
-    else:
-        print("Invalid Choice😵‍💫")
+#     if choice == 1:
+#         print("Booking ticket ...")
+#     elif choice ==2:
+#         print("Checking Status")
+#     elif choice == 3:
+#         print("Thank you for using Indian Railways🙏")
+#     else:
+#         print("Invalid Choice😵‍💫")
+
+
+# Ticket Price Calculator
+
+# def calculated_ticket_price(distance,class_type):
+#     base_rate = 0.5
+
+#     if class_type == "Sleeper":
+#         multiplier = 1.0
+#     elif class_type == "AC 3 Tier":
+#         multiplier = 2.0
+#     elif class_type == "AC 2 Tier":
+#         multiplier = 2.5
+#     elif class_type == "AC 1 Tier":
+#         multiplier = 3.0
+#     else:
+#         multiplier = 1.0
+#     price = distance * base_rate * multiplier
+
+#     return round(price,2)
+
+# distance = 500
+# Class_type = "Sleeper"
+# price = calculated_ticket_price(distance,Class_type)
+
+# print(f"Price for {distance}km in {Class_type} : ₹{price}")
+
+
+# Ticket Booking
+def book_ticket(passenger_name,age,destination,class_type = "Sleeper"):
+    Ticket = {
+        "Passenger Name" : passenger_name,
+        "Age" : age,
+        "Destination" : destination,
+        "Booking ID" :f"BK{hash(passenger_name)% 10000:04d}"
+    }
+    return Ticket
+
+def get_passenger_details(*args,**kwargs):
+    print("Positional arguments : ",args)
+    print("Keyword arguments : ",kwargs)
+
+
+ticket1 = book_ticket("Samyak Ubale",22,"Goa","AC 1 tier")
+ticket2 = book_ticket("Priya Singh",21,"Delhi","AC 3 tier")
+
+print("\nTicket 1 : ",ticket1)
+print("\nTicket 2 : ",ticket2)
+
+get_passenger_details("Samyak",22,"Goa",class_type = "AC 1 tier",Meal_Preference = "NON-VEG")
